@@ -1,6 +1,11 @@
 var express = require('express');
 var app = express();
 
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+  });
+
 var player01 = {
     name: "Magnus Carlsen" ,
     country: "Norway",
